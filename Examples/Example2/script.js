@@ -50,7 +50,7 @@ function makeRequest() {
 	if(xhr) {
 		
 		/***
-		 * Step 1: onreadystatechange event is set to be showState function; means anytime the state changes 
+		 * Step 1: onreadystatechange event is set to be showContents function; means anytime the state changes 
 		 * `showState` function gets called.
 		 */
 		xhr.onreadystatechange = showContents;
@@ -82,7 +82,7 @@ function makeRequest() {
 function showContents() {
 	/***
 	 * Well, readyState can be 0 to 4; but we care when it is 4.
-	 * i.e. when the request is finished 
+	 * i.e. when the request is finished.
 	 */
 	if(xhr.readyState === 4) {
 		/***
