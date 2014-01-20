@@ -80,8 +80,21 @@ function makeRequest() {
  * This function gets called whenever the readyState is changed.
  */
 function showContents() {
+	/***
+	 * Well, readyState can be 0 to 4; but we care when it is 4.
+	 * i.e. when the request is finished 
+	 */
 	if(xhr.readyState === 4) {
+		/***
+		 * Check to see if status is 200; means we want to know 
+		 * if the value come from server is `OK`. Here it means we were able to find
+		 * `index.xml` file & able to read it.
+		 */
 		if(xhr.status === 200) {
+			/***
+			 * responseText is a text that web server sends back in response
+			 * to our request from the server.
+			 */
 			var outMsg = xhr.responseText;
 		} else {
 			var outMsg = "There was a problem with the request " + xhr.status;
