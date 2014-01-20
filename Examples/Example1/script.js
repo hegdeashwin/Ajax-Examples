@@ -1,5 +1,5 @@
 /***
- * Example 1: Understanding XMLHttpRequest.
+ * Example 1: Understanding XHR State.
  * Warning: For Google Chrome, It might give some error like
  * "Uncaught InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable."
  *
