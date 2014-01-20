@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<color xml:lang="EN">
+	<color>
+		<name>Black</name>
+		<value>#000000</value>
+	</color>
+	<color>
+		<name>White</name>
+		<value>#FFFFFF</value>
+	</color>
+	<color>
+		<name>Blue</name>
+		<value>#0000FF</value>
+	</color>
+</color>
