@@ -1,42 +1,25 @@
 /***
- * 1. Understanding jQuery's Shorthand Methods - $.getJSON()
+ * 1. Understanding jQuery's Shorthand Methods - $.getScript()
  */
 
 $(function() {
 	/***
-	 * Load JSON-encoded data from the server using a GET HTTP request.
+	 *  Load a JavaScript file from the server using a GET HTTP request, then execute it.
 	 */
-	$.getJSON("index.json")
-		.done(function(data) {
-			console.log('Getting `JSON` file');
+	$.getScript("index.js")
+		.done(function() {
 			console.log('--Success--');
-			/***
-			 * console what was returned
-			 */
-			console.log('Data: ');
-			console.log(data);
-			console.log('Type of data is: ' + typeof data);
-
-			console.log('Total number of employees are: ' + data.employees.length);
+			var data = prepareData();
+			console.log('Total number of employees are: ' + data.students.length);
 
 			/***
-			 * 1st Way: used for loop over object.
-			 */
-			console.log("Using FOR loop: ");
-			for (var employee = 0; employee < data.employees.length; employee++) {
-				console.log(data.employees[employee].id);
-				// console.log(data.employees[employee].firstname);
-				// console.log(data.employees[employee].lastname);
-			}
-
-			/***
-			 * 2nd Way: used for-in loop over object.
+			 * Used for-in loop over object.
 			 */
 			console.log("Using FOR-IN loop: ");
-			for (var employee in data.employees) {
-				console.log(data.employees[employee].id);
-				// console.log(data.employees[employee].firstname);
-				// console.log(data.employees[employee].lastname);
+			for (var student in data.students) {
+				console.log(data.students[student].id);
+				// console.log(data.students[student].firstname);
+				// console.log(data.students[student].lastname);
 			}
 		})
 		.fail(function() {

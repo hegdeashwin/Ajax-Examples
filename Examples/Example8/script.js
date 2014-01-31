@@ -1,31 +1,16 @@
 /***
- * 1. Understanding jQuery's Shorthand Methods - $.getScript()
+ * 1. Understanding jQuery's Shorthand Methods - .load()
  */
 
 $(function() {
 	/***
-	 *  Load a JavaScript file from the server using a GET HTTP request, then execute it.
+	 * Load data from the server and place the returned HTML into the matched element.
 	 */
-	$.getScript("index.js")
-		.done(function() {
-			console.log('--Success--');
-			var data = prepareData();
-			console.log('Total number of employees are: ' + data.students.length);
+	$('body').load("index.json", function(data) {
+		console.log('Loaded');
 
-			/***
-			 * Used for-in loop over object.
-			 */
-			console.log("Using FOR-IN loop: ");
-			for (var student in data.students) {
-				console.log(data.students[student].id);
-				// console.log(data.students[student].firstname);
-				// console.log(data.students[student].lastname);
-			}
-		})
-		.fail(function() {
-			console.log('--Error--');
-		})
-		.always(function() {
-			console.log('--Finished--');
-		});
+		console.log(data);
+		console.log(typeof data);
+		console.log($.parseJSON(data));
+	});
 });
