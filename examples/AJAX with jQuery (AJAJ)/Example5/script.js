@@ -26,7 +26,7 @@ $(function() {
 		// }
 	};
 
-	$.ajax("index.json", settings).done(function() {
+	$.ajax("../../../files/index.json", settings).done(function() {
 		console.log('--Success--');
 	}).fail(function() {
 		console.log('--Error--');

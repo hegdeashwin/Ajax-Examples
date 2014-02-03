@@ -6,7 +6,7 @@ $(function() {
 	/***
 	 *  Load a JavaScript file from the server using a GET HTTP request, then execute it.
 	 */
-	$.getScript("index.js")
+	$.getScript("../../../files/index.js")
 		.done(function() {
 			console.log('--Success--');
 			var data = prepareData();

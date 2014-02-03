@@ -6,7 +6,7 @@ $(function() {
 	/***
 	 * Load data from the server and place the returned HTML into the matched element.
 	 */
-	$('body').load("index.json", function(data) {
+	$('body').load("../../../files/index.json", function(data) {
 		console.log('Loaded');
 
 		console.log(data);

@@ -1,17 +1,12 @@
 /***
- * 1. Understanding jQuery's Shorthand Methods - $.get()
+ * 1. Understanding jQuery's Shorthand Methods - $.getJSON()
  */
 
 $(function() {
 	/***
-	 * Load data from the server using a HTTP GET request.
+	 * Load JSON-encoded data from the server using a GET HTTP request.
 	 */
-
-	/***
-	 * NOTE: `success`, `error`, `complete` methods are callback methods introduced
-	 * in jQuery 1.5 are deprecated as of jQuery 1.8.
-	 */
-	$.get("index.json")
+	$.getJSON("../../../files/index.json")
 		.done(function(data) {
 			console.log('Getting `JSON` file');
 			console.log('--Success--');
@@ -50,30 +45,4 @@ $(function() {
 		.always(function() {
 			console.log('--Finished--');
 		});
-
-	/***
-	 * Getting `SCRIPT` file
-	 */
-	// $.get("index.js")
-	// 	.done(function(data) {
-	// 		console.log('Getting `Script` file');
-
-	// 		console.log('Data: ');
-	// 		console.log(data);
-
-	// 		console.log('Type of data is: ' + typeof data);
-	// 	});
-
-	/***
-	 * Getting `TEXT` file
-	 */
-	// $.get("index.txt")
-	// 	.done(function(data) {
-	// 		console.log('Getting `Text` file');
-
-	// 		console.log('Data: ');
-	// 		console.log(data);
-
-	// 		console.log('Type of data is: ' + typeof data);
-	// 	});
 });
